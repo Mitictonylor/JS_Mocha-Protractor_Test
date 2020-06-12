@@ -26,4 +26,9 @@ describe('calculator', function () {
    calculator.multiply(5);
    assert.equal(15, calculator.runningTotal);
  })
+ it('should be able to divide', function() {
+   calculator.previousTotal = 21;
+   calculator.divide(7);
+   assert.equal(3,calculator.runningTotal);
+ })
 });
