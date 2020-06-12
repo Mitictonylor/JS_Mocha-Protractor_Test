@@ -12,9 +12,13 @@ describe('calculator', function () {
   });
 
  it('it can add', function(){
-   calculator.previousTotal = 1
-   calculator.add(4)
+   calculator.previousTotal = 4
+   calculator.add(1)
    assert.equal(5, calculator.runningTotal)
  });
-
+ it('it can subtract', function() {
+   calculator.previousTotal = 7;
+   calculator.subtract(4);
+   assert.equal(3,calculator.runningTotal);
+ })
 });
