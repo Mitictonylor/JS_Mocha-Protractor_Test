@@ -93,5 +93,13 @@ describe('calculator functionality', function() {
     element(by.css('#number9')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('70312500')
+  });
+  it('should divide for zero and showing 0 instead of infinity', function(){
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number5')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click()
+    expect(running_total.getAttribute('value')).to.eventually.equal('0')
   })
 });
