@@ -31,4 +31,9 @@ describe('calculator', function () {
    calculator.divide(7);
    assert.equal(3,calculator.runningTotal);
  })
+ it('should be able to concatenate the clicked number to the running total', function() {
+   calculator.numberClick(6);
+   calculator.numberClick(9);
+   assert.equal(69,calculator.runningTotal);
+ })
 });
