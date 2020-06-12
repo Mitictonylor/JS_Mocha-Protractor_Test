@@ -31,5 +31,13 @@ describe('calculator functionality', function() {
     element(by.css('#number2')).click();
     element(by.css('#operator_equals')).click()
     expect(running_total.getAttribute('value')).to.eventually.equal('5')
+  });
+  it('should  multiply 3 to 2', function(){
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number3')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click()
+    expect(running_total.getAttribute('value')).to.eventually.equal('6')
   })
 });
