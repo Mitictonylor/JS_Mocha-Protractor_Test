@@ -53,4 +53,12 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('12')
   })
+  it('should work for negative numbers', function() {
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number5')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('-4')
+  })
 });
