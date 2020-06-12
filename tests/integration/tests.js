@@ -39,8 +39,7 @@ describe('calculator functionality', function() {
     element(by.css('#number2')).click();
     element(by.css('#operator_equals')).click()
     expect(running_total.getAttribute('value')).to.eventually.equal('6')
-  })
-
+  });
   it('should be able to chain multiple operators', function() {
     running_total = element(by.css('#running_total'));
     element(by.css('#number2')).click();
@@ -52,7 +51,7 @@ describe('calculator functionality', function() {
     element(by.css('#number6')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('12')
-  })
+  });
   it('should work for negative numbers', function() {
     running_total = element(by.css('#running_total'));
     element(by.css('#number5')).click();
@@ -60,7 +59,7 @@ describe('calculator functionality', function() {
     element(by.css('#number9')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('-4')
-  })
+  });
   it('should work for decimals numbers', function() {
     running_total = element(by.css('#running_total'));
     element(by.css('#number4')).click();
@@ -68,5 +67,31 @@ describe('calculator functionality', function() {
     element(by.css('#number8')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('0.5')
+  });
+  it('should work for big numbers', function() {
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number4')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('70312500')
   })
 });
