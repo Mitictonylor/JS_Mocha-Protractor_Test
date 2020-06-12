@@ -40,5 +40,16 @@ describe('calculator', function () {
    calculator.operatorClick('+');
    assert.equal(true, calculator.newTotal);
  })
+ it('it can  clear total when clearClick is pushed', function() {
+   calculator.runningTotal = 99;
+   calculator.clearClick();
+   assert.equal(0, calculator.runningTotal);
+ })
+
+ it('it can clear previousOperator', function(){
+ calculator.previousOperator = '-';
+ calculator.clearClick();
+ assert.equal(null, calculator.previousOperator);
+})
 
 });
